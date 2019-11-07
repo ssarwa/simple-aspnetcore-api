@@ -23,8 +23,9 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: buildAndPush
-        dockerfile: '**/Dockerfile'
-        tags: |
-          $(tag)
+        containerRegistry: 'dockerhub'
+        repository: 'srikantsarwa/simple-aspnetcore-api'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
     
