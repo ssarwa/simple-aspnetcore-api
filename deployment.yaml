@@ -16,6 +16,8 @@ spec:
         image: BUILD_ID
         ports:
         - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service
