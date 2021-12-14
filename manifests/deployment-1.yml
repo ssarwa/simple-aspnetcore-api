@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azurecluster-3d5c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azurecluster-3d5c"
+  template:
+    metadata:
+      labels:
+        app: "azurecluster-3d5c"
+    spec:
+      containers:
+        - name: "azurecluster-3d5c"
+          image: "sysacr.azurecr.io/azurecluster"
+          ports:
+          - containerPort: 80
